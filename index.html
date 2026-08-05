@@ -57,10 +57,10 @@ nav{
   background:linear-gradient(135deg,var(--ice),var(--violet));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.nav-logo span{font-weight:400;font-size:10px;letter-spacing:2.5px;display:block;-webkit-text-fill-color:var(--text-dim);color:var(--text-dim);margin-top:-3px}
-.nav-center{font-size:10px;letter-spacing:3px;color:var(--text-mute)}
+.nav-logo span{font-weight:400;font-size:14px;letter-spacing:2.5px;display:block;-webkit-text-fill-color:var(--text-dim);color:var(--text-dim);margin-top:-3px}
+.nav-center{font-size:14px;letter-spacing:3px; font-weight: 100px; var(--text-mute)}
 .nav-links{display:flex;gap:6px;list-style:none}
-.nav-links a{padding:7px 14px;font-size:11px;letter-spacing:1.5px;color:var(--text-dim);border-radius:8px;border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
+.nav-links a{padding:7px 14px;font-size:14px;letter-spacing:1.5px;color:var(--text-dim);border-radius:8px;border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--ice);border-color:var(--ice-border);background:var(--ice-dim)}
 
 /* HERO */
@@ -72,14 +72,14 @@ nav{
   flex:1;display:grid;grid-template-columns:1fr 1fr;
   align-items:center;padding:60px 48px 40px;
 }
-.hero-left{display:flex;flex-direction:column;gap:22px;z-index:2}
+.hero-left{display:flex;flex-direction:column;gap:18px;z-index:2}
 .hero-spinner{width:48px;height:48px;flex-shrink:0}
 .hero-spinner svg{width:100%;height:100%;display:block;animation:spin 4.5s linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
   padding:7px 16px;border-radius:100px;
-  font-size:10px;letter-spacing:2px;color:var(--ice);
+  font-size:12px;letter-spacing:2px;color:var(--ice);
   background:rgba(2,132,199,0.14);border:1px solid var(--ice-border);width:fit-content;
 }
 .hero-tag-dot{width:5px;height:5px;background:var(--ice);border-radius:50%;animation:blink 2.4s ease-in-out infinite}
@@ -292,9 +292,8 @@ footer{padding:44px 48px;border-top:1px solid var(--glass-b);display:flex;align-
         GRAPHIC / UX / UI DESIGN · SEOUL / KR · 2026
       </div>
       <h1 class="hero-name">
-        <span class="grad">KWON<br>MIN KYU</span>
+        <span class="grad">KWON MIN KYU</span>
       </h1>
-      <p class="hero-desc">문제를 구조화하고,<br>명확한 시각 경험으로 연결합니다.</p>
       <a class="hero-cta" href="#pdf">OPEN WORK ↓</a>
     </div>
 
