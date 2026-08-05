@@ -66,30 +66,31 @@ nav{
 /* HERO */
 #top{position:relative;min-height:100vh;padding-top:64px;display:flex;flex-direction:column;overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-video-overlay{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(255,255,255,0.32) 0%,rgba(245,248,255,0.16) 45%,rgba(255,255,255,0.4) 100%)}
 #top>.hero-upper,#top>.marquee-wrap{position:relative;z-index:1}
 .hero-upper{
   flex:1;display:grid;grid-template-columns:1fr 1fr;
   align-items:center;padding:60px 48px 40px;
 }
 .hero-left{display:flex;flex-direction:column;gap:18px;z-index:2}
-.hero-spinner{width:48px;height:48px;flex-shrink:0}
+.hero-spinner{width:40px;height:40px;flex-shrink:0}
 .hero-spinner svg{width:100%;height:100%;display:block;animation:spin 4.5s linear infinite}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .hero-tag{
   display:inline-flex;align-items:center;gap:8px;
-  padding:7px 16px;border-radius:100px;
-  font-size:12px;letter-spacing:2px;color:var(--ice);
-  background:rgba(2,132,199,0.14);border:1px solid var(--ice-border);width:fit-content;
+  padding:6px 14px;border-radius:100px;
+  font-size:10px;letter-spacing:2px;color:#fff;
+  background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.42);width:fit-content;
+  text-shadow:0 1px 6px rgba(0,0,0,0.25);
 }
-.hero-tag-dot{width:5px;height:5px;background:var(--ice);border-radius:50%;animation:blink 2.4s ease-in-out infinite}
+.hero-tag-dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:blink 2.4s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero-name{font-size:54px;font-weight:800;letter-spacing:-2.5px;line-height:1.02;color:#0D1B2A}
+.hero-name{font-size:44px;font-weight:800;letter-spacing:-2px;line-height:1.05;color:#fff}
 .hero-name .grad{
-  background:linear-gradient(135deg,var(--ice) 0%,var(--violet) 60%);
+  background:linear-gradient(135deg,#ffffff 0%,#eaf6ff 45%,#ffffff 60%,#dcefff 100%);
   background-size:200% auto;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   animation:shimmer 5s linear infinite;
+  filter:drop-shadow(0 2px 14px rgba(0,0,0,0.22));
 }
 @keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
 .hero-desc{font-size:15px;color:var(--text-dim);font-weight:300;line-height:1.8;max-width:360px}
@@ -121,7 +122,7 @@ nav{
 }
 .hero-letters{
   position:relative;width:100%;display:block;
-  filter:drop-shadow(0 8px 32px rgba(13,71,161,0.42)) drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+  filter:brightness(0) invert(1) drop-shadow(0 0 28px rgba(255,255,255,0.5)) drop-shadow(0 8px 24px rgba(0,0,0,0.25));
   transition:filter .3s;
   /* PNG 내부 상하 여백 당기기 */
   margin-bottom:-7%;
@@ -265,12 +266,11 @@ footer{padding:44px 48px;border-top:1px solid var(--glass-b);display:flex;align-
 
 <section id="top" aria-label="Hero">
   <img class="hero-video" id="heroFrames" src="assets/video/frames/frame-001.jpg" alt="" aria-hidden="true">
-  <div class="hero-video-overlay" aria-hidden="true"></div>
   <div class="hero-upper">
     <div class="hero-left">
       <div class="hero-spinner" aria-hidden="true">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <g fill="var(--ice)">
+          <g fill="#fff" style="filter:drop-shadow(0 1px 6px rgba(0,0,0,0.3))">
             <g transform="rotate(0 50 50) translate(50 20)"><rect x="-3" y="-13" width="6" height="26" rx="3"/><circle cy="-13" r="6"/><circle cy="13" r="6"/></g>
             <g transform="rotate(36 50 50) translate(50 20)"><rect x="-3" y="-13" width="6" height="26" rx="3"/><circle cy="-13" r="6"/><circle cy="13" r="6"/></g>
             <g transform="rotate(72 50 50) translate(50 20)"><rect x="-3" y="-13" width="6" height="26" rx="3"/><circle cy="-13" r="6"/><circle cy="13" r="6"/></g>
