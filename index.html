@@ -47,21 +47,31 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 48px;height:64px;
-  background:rgba(255,255,255,0.82);
-  backdrop-filter:blur(24px) saturate(180%);
-  -webkit-backdrop-filter:blur(24px) saturate(180%);
-  border-bottom:1px solid var(--glass-b);
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(12px) saturate(160%);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);
+  border-bottom:1px solid rgba(255,255,255,0.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2);
+  transition:background .3s,border-color .3s,box-shadow .3s;
 }
+nav.nav-solid{
+  background:rgba(255,255,255,0.82);
+  border-bottom:1px solid var(--glass-b);
+  box-shadow:none;
+}
+nav.nav-solid .nav-center{color:var(--text-mute);text-shadow:none}
+nav.nav-solid .nav-links a{color:var(--text-dim);text-shadow:none}
+nav.nav-solid .nav-links a:hover,nav.nav-solid .nav-links a.active{color:var(--ice);border-color:var(--ice-border);background:var(--ice-dim)}
 .nav-logo{
   font-weight:800;font-size:18px;letter-spacing:-0.5px;
   background:linear-gradient(135deg,var(--ice),var(--violet));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.nav-logo span{font-weight:400;font-size:14px;letter-spacing:2.5px;display:block;-webkit-text-fill-color:var(--text-dim);color:var(--text-dim);margin-top:-3px}
-.nav-center{font-size:14px;letter-spacing:3px; font-weight: 100px; var(--text-mute)}
+.nav-logo span{font-weight:400;font-size:14px;letter-spacing:2.5px;display:block;-webkit-text-fill-color:rgba(255,255,255,0.85);color:rgba(255,255,255,0.85);margin-top:-3px}
+.nav-center{font-size:14px;letter-spacing:3px;font-weight:100;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,0.25)}
 .nav-links{display:flex;gap:6px;list-style:none}
-.nav-links a{padding:7px 14px;font-size:14px;letter-spacing:1.5px;color:var(--text-dim);border-radius:8px;border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--ice);border-color:var(--ice-border);background:var(--ice-dim)}
+.nav-links a{padding:7px 14px;font-size:14px;letter-spacing:1.5px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,0.25);border-radius:8px;border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff;border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.18)}
 
 /* HERO */
 #top{position:relative;min-height:100vh;padding-top:64px;display:flex;flex-direction:column;overflow:hidden}
@@ -481,9 +491,11 @@ const heroFramePaths=Array.from({length:HERO_FRAME_COUNT},(_,i)=>`assets/video/f
 const heroFrameCache=heroFramePaths.map(src=>{const im=new Image();im.src=src;return im;});
 let heroFrameIdx=0;
 
+const navEl=document.querySelector('nav');
 window.addEventListener('scroll',()=>{
   const sy=window.scrollY;
   const heroH=document.getElementById('top').offsetHeight;
+  navEl.classList.toggle('nav-solid',sy>heroH-80);
   if(sy<=heroH){
     const p=sy/heroH;
     imgPort.style.transform=`translateY(${-sy*0.38}px) scale(${1-p*0.08})`;
