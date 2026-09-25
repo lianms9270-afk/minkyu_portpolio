@@ -195,15 +195,15 @@ section{position:relative;z-index:2}
 .pdf-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pdf-item{
   display:flex;flex-direction:column;align-items:stretch;gap:14px;padding:18px;border-radius:18px;
-  background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border:1px solid var(--glass-b);
-  transition:transform .2s,border-color .2s,background .2s;
+  background:#fff;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(13,27,42,0.10);
+  transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;
   position:relative;overflow:hidden;cursor:pointer;
 }
-.pdf-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(14,165,176,0.55),transparent);opacity:0;transition:opacity .3s}
-.pdf-item:hover{transform:translateY(-6px);border-color:var(--ice-border);background:rgba(14,165,176,0.14)}
+.pdf-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,42,0.35),transparent);opacity:0;transition:opacity .3s}
+.pdf-item:hover{transform:translateY(-6px);border-color:rgba(13,27,42,0.18);background:#fff;box-shadow:0 12px 32px rgba(13,27,42,0.10)}
 .pdf-item:hover::before{opacity:1}
-.pdf-thumb{width:100%;aspect-ratio:16/9;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,rgba(14,165,176,0.18),rgba(109,40,217,0.18));border:1px solid var(--ice-border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--ice);overflow:hidden}
+.pdf-thumb{width:100%;aspect-ratio:16/9;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,rgba(14,165,176,0.18),rgba(109,40,217,0.18));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--ice);overflow:hidden}
 .pdf-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .pdf-info{flex:1}
 .pdf-tag{font-size:9px;letter-spacing:2px;color:var(--ice);margin-bottom:6px;opacity:0.8}
